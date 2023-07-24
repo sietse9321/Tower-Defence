@@ -1079,7 +1079,7 @@ PrefabInstance:
     - target: {fileID: 1385028678623448431, guid: 5dd8a35223f3ed946959cd5117008b66,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1385028678623448431, guid: 5dd8a35223f3ed946959cd5117008b66,
         type: 3}
@@ -5252,7 +5252,7 @@ PrefabInstance:
     - target: {fileID: 1385028678623448431, guid: 5dd8a35223f3ed946959cd5117008b66,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1385028678623448431, guid: 5dd8a35223f3ed946959cd5117008b66,
         type: 3}
@@ -18582,7 +18582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  rotationSpeed: 200
+  rotationSpeed: 500
   moveHorizontal: 0
   moveVertical: 0
   moveUp: 0
@@ -22521,6 +22521,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 5912791616216154188, guid: 7e23ba74096693944ba67581f3723679,
+        type: 3}
+      propertyPath: rotateTowardsTarget
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e23ba74096693944ba67581f3723679, type: 3}

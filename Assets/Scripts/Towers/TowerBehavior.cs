@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
-
 public class TowerBehavior : MonoBehaviour
 {
     public float range = 5f;
@@ -17,6 +14,9 @@ public class TowerBehavior : MonoBehaviour
     public Transform firePoint;
     public Transform partToRotate;
     public string enemyTag = "Enemy";
+    public string towerTargeting = "First";
+    bool targetFirstEnemy = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,7 @@ public class TowerBehavior : MonoBehaviour
     }
 
     // Update is called once per frame
+    //rotates turret and shiz
     void Update()
     {
         //if there is no target return
@@ -61,7 +62,7 @@ public class TowerBehavior : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         GameObject wip = Instantiate(muzzleFlash, firePoint);
         Destroy(wip, 2f);
-        
+
         Bullet bulletComponet = bullet.GetComponent<Bullet>();
         //if bullet is not null do code
         if (bulletComponet != null)
@@ -76,26 +77,51 @@ public class TowerBehavior : MonoBehaviour
 
     void TargetUpdate()
     {
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-        float shortestDistance = Mathf.Infinity;
-        GameObject nearestEnemy = null;
-        foreach (GameObject enemy in enemies)
+        GameObject targetEnemy = null;
+
+        // Add this boolean variable, true for targeting the first enemy, false for targeting the last enemy
+
+        if (targetFirstEnemy && enemies.Length > 0)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < shortestDistance)
+            targetEnemy = enemies[0];
+        }
+        else if (!targetFirstEnemy && enemies.Length > 0)
+        {
+            targetEnemy = enemies[enemies.Length - 1];
+        }
+
+        if (targetEnemy != null)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, targetEnemy.transform.position);
+
+            if (distanceToEnemy > range)
             {
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
+                // If the target enemy is out of range, find the next enemy in the array within range
+                targetEnemy = null;
+
+                for (int i = 0; i < enemies.Length; i++)
+                {
+                    distanceToEnemy = Vector3.Distance(transform.position, enemies[i].transform.position);
+                    if (distanceToEnemy <= range)
+                    {
+                        targetEnemy = enemies[i];
+                        break;
+                    }
+                }
             }
         }
-        if (nearestEnemy != null && shortestDistance <= range)
+
+        if (targetEnemy != null)
         {
-            target = nearestEnemy.transform;
+            target = targetEnemy.transform;
         }
         else
         {
-            target = null;
+            target = null; // No enemies found within range, set target to null
         }
+
     }
     private void OnDrawGizmosSelected()
     {

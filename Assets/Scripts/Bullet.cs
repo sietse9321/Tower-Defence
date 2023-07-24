@@ -23,6 +23,8 @@ public class Bullet : MonoBehaviour
         rb.velocity = transform.up * bulletSpeed;
         //destoys this gameobject after and uses bullet time for this
         Destroy(gameObject, bulletTime);
+       // !!!!!!!!!transform.LookAt();!!!!!!!!!!!!
+
     }
 
     private void OnTriggerEnter(Collider other)

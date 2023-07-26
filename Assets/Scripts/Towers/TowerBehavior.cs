@@ -67,6 +67,7 @@ public class TowerBehavior : MonoBehaviour
         //if bullet is not null do code
         if (bulletComponet != null)
         {
+            bulletComponet.Seek(target);
             //bullet damage is this scripts bullet damage
             bulletComponet.damage = bulletDamage;
         }

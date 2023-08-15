@@ -8,8 +8,15 @@ public class TowerPlacement : MonoBehaviour
     private GameObject currentTower;
     [SerializeField] GameObject _tower;
     bool firstPress = false;
+    PlayerStats playerStats;
     // Start is called before the first frame update
 
+    private void Start()
+    {
+        GameObject ps = GameObject.FindWithTag("End");
+        playerStats = ps.GetComponent<PlayerStats>();
+
+    }
     void Update()
     {
         //if (1) is pressed down do code
@@ -42,10 +49,11 @@ public class TowerPlacement : MonoBehaviour
                 currentTower.transform.position = hitInfo.point;
             }
             //if leftmoouse button down and not raycast does not hit object with tag road do code
-            if (Input.GetMouseButtonDown(0) && !hitInfo.collider.CompareTag("Road"))
+            if (Input.GetMouseButtonDown(0) && !hitInfo.collider.CompareTag("Road") && playerStats.money >= 150)
             {
                 firstPress = false;
                 currentTower = null;
+                playerStats.money -= 150;
             }
         }
     }

@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class PlayerHP : MonoBehaviour
+public class PlayerStats : MonoBehaviour
 {
     [SerializeField] float pHp;
-    [SerializeField]EnemyHp enemyHp;
+    public TextMeshProUGUI hpText;
+    public TextMeshProUGUI moneyText;
+    EnemyHp enemyHp;
+    public int money = 300;
+
     void Start()
     {
         //sets the player hp to 200
@@ -21,8 +26,10 @@ public class PlayerHP : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-    private void Update()
+    void Update()
     {
-        print(pHp);
+        hpText.text = $"Hp: {pHp}";
+        moneyText.text = $"Money: {money}";
+
     }
 }

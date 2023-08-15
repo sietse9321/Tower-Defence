@@ -30,7 +30,6 @@ public class Bullet : MonoBehaviour
         if (target != null)
         {
             rb.transform.LookAt(target.transform.position);
-
         }
 
         //destoys this gameobject after and uses bullet time for this

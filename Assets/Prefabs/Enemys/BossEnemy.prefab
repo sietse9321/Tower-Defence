@@ -194,6 +194,11 @@ PrefabInstance:
       propertyPath: hp
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 3481893720928899860, guid: 3d3d99abcb856854db00d2c960454bc7,
+        type: 3}
+      propertyPath: moneyToGive
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 3481893721833584280, guid: 3d3d99abcb856854db00d2c960454bc7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

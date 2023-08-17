@@ -283,7 +283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aeaa65fdf18ba44ea44695313cc3afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 4
+  hp: 5
+  moneyToGive: 5
+  pStats: {fileID: 0}
 --- !u!136 &3209006704508073837
 CapsuleCollider:
   m_ObjectHideFlags: 0

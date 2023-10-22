@@ -156,7 +156,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 7c69b8a7b5790ab42b1874d222a97370, type: 2}
@@ -241,7 +241,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3481893720928899856}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_Radius: 0.33
   m_Speed: 3
   m_Acceleration: 8
@@ -253,7 +253,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 1.31
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 7
   m_ObstacleAvoidanceType: 0
 --- !u!114 &3481893720928899863
 MonoBehaviour:
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 5
-  moneyToGive: 5
+  moneyToGive: 10
   pStats: {fileID: 0}
 --- !u!136 &3209006704508073837
 CapsuleCollider:

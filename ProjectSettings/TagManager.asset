@@ -10,6 +10,7 @@ TagManager:
   - End
   - Enemy
   - CantPlace
+  - BossRoad
   layers:
   - Default
   - TransparentFX

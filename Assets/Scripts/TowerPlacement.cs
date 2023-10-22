@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TowerPlacement : MonoBehaviour
 {
+    string[] cantPlaceTags = { "Road", "BossRoad" };
     [SerializeField] Camera _camera;
     private GameObject currentTower;
     [SerializeField] GameObject _tower;
@@ -49,7 +51,7 @@ public class TowerPlacement : MonoBehaviour
                 currentTower.transform.position = hitInfo.point;
             }
             //if leftmoouse button down and not raycast does not hit object with tag road do code
-            if (Input.GetMouseButtonDown(0) && !hitInfo.collider.CompareTag("Road") && playerStats.money >= 150)
+            if (Input.GetMouseButtonDown(0) && !cantPlaceTags.Contains(hitInfo.collider.tag) && playerStats.money >= 150)
             {
                 firstPress = false;
                 currentTower = null;

@@ -18,6 +18,7 @@ public class waveSpawner : MonoBehaviour
     private void Start()
     {
         pos = this.gameObject.transform.position;
+        pos = new Vector3(-8.199654f, 0.38923f, -16.59f);
     }
     // Update is called once per frame
     void Update()

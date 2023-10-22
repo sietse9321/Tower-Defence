@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TowerPlacement : MonoBehaviour
 {
-    string[] cantPlaceTags = { "Road", "BossRoad" };
+    string[] cantPlaceTags = { "Road", "BossRoad", "CantPlace" };
     [SerializeField] Camera _camera;
     private GameObject currentTower;
     [SerializeField] GameObject _tower;

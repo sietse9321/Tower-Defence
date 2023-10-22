@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - CantPlace
   - BossRoad
+  - Wall
   layers:
   - Default
   - TransparentFX

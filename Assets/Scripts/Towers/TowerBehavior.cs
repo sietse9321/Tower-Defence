@@ -3,8 +3,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 public class TowerBehavior : MonoBehaviour
 {
-    public float range = 5f;
     private float timeBetweenShot = 1f;
+    public float range = 5f;
     public float fireRate = 1f;
     public float turnspeed = 20f;
     public float bulletDamage = 1;
@@ -17,7 +17,6 @@ public class TowerBehavior : MonoBehaviour
     public string towerTargeting = "First";
     bool targetFirstEnemy = true;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +24,6 @@ public class TowerBehavior : MonoBehaviour
         InvokeRepeating("TargetUpdate", 0f, 0.5f);
     }
 
-    // Update is called once per frame
     //rotates turret and shiz
     void Update()
     {
@@ -52,8 +50,6 @@ public class TowerBehavior : MonoBehaviour
 
     }
 
-
-
     void Shoot()
     {
         print("target aquired shooting now");
@@ -73,12 +69,8 @@ public class TowerBehavior : MonoBehaviour
         }
     }
 
-
-
-
     void TargetUpdate()
     {
-
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         GameObject targetEnemy = null;
 
@@ -122,7 +114,6 @@ public class TowerBehavior : MonoBehaviour
         {
             target = null; // No enemies found within range, set target to null
         }
-
     }
     private void OnDrawGizmosSelected()
     {

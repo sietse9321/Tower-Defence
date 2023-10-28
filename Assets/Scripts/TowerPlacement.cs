@@ -9,8 +9,10 @@ public class TowerPlacement : MonoBehaviour
     [SerializeField] Camera _camera;
     private GameObject currentTower;
     [SerializeField] GameObject _tower;
+    [SerializeField] GameObject _tower2;
     bool firstPress = false;
     PlayerStats playerStats;
+    BoxCollider box;
     // Start is called before the first frame update
 
     private void Start()
@@ -39,6 +41,19 @@ public class TowerPlacement : MonoBehaviour
                 Destroy(currentTower);
             }
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (firstPress == false)
+            {
+                SetTowerToPlace(_tower2);
+                firstPress = true;
+            }
+            else
+            {
+                firstPress = false;
+                Destroy(currentTower);
+            }
+        }
         //if not null do code
         if (currentTower != null)
         {
@@ -56,6 +71,8 @@ public class TowerPlacement : MonoBehaviour
                 firstPress = false;
                 currentTower = null;
                 playerStats.money -= 150;
+                //activate collider
+                box.enabled = true;
             }
         }
     }
@@ -67,5 +84,7 @@ public class TowerPlacement : MonoBehaviour
     public void SetTowerToPlace(GameObject tower)
     {
         currentTower = Instantiate(tower, Vector3.zero, Quaternion.identity);
+        //sets the box collider to the current tower component
+        box = currentTower.GetComponent<BoxCollider>();
     }
 }

@@ -17,7 +17,6 @@ public class TowerCanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         partTortate.transform.LookAt(Camera.main.transform.position);
     }
     /// <summary>
@@ -35,7 +34,6 @@ public class TowerCanvas : MonoBehaviour
     {
         tBehavior.bulletDamage++;
         print("Upgrading damage to" + tBehavior.bulletDamage);
-
     }
     /// <summary>
     /// upgrades the range by 2 and prints the with the value of the range

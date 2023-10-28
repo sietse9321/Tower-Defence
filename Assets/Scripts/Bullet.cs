@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public Rigidbody rb;
     [SerializeField] Transform target;
-    [SerializeField] float bulletSpeed = 15f;
+    [SerializeField] float bulletSpeed = 1.5f;
     [SerializeField] float bulletTime = 1.5f;
     public float damage;
     EnemyHp eHp = null;
@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //moves the rigidbody up times the bullet speed
+        //moves the rigidbody forwards times the bullet speed
         rb.velocity = transform.forward * bulletSpeed;
         if (target != null)
         {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6742725811923897587}
   - component: {fileID: 2893706142381081966}
   - component: {fileID: 7380837243134323508}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 4512152618888285216}
   - component: {fileID: 4205515132325575125}
   - component: {fileID: 7642439898204367285}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 3261952767162877151}
   - component: {fileID: 4993106759829092373}
   - component: {fileID: 3620671076416987597}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,6 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4196086088718831373}
   - component: {fileID: 5912791616216154188}
+  - component: {fileID: 9186945037216105824}
   m_Layer: 0
   m_Name: Turret
   m_TagString: CantPlace
@@ -361,18 +362,20 @@ MonoBehaviour:
   firePoint: {fileID: 4096002766534087985}
   partToRotate: {fileID: 4196086088811960854}
   enemyTag: Enemy
-  EnemyList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   towerTargeting: First
+--- !u!65 &9186945037216105824
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4196086088718831374}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6315221, y: 0.58992857, z: 0.6144229}
+  m_Center: {x: 0.0037169696, y: 0.30189773, z: -0.010514736}
 --- !u!1 &4196086088811960855
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +421,7 @@ GameObject:
   - component: {fileID: 7945585855705800806}
   - component: {fileID: 873072627949661056}
   - component: {fileID: 1574781712934080038}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +537,7 @@ GameObject:
   - component: {fileID: 7454208974982167369}
   - component: {fileID: 8492593452656918117}
   - component: {fileID: 3256217131181114278}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: RangeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +671,7 @@ GameObject:
   - component: {fileID: 5124642071472830994}
   - component: {fileID: 1791215493406133949}
   - component: {fileID: 8366021781883623559}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FirerateButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +805,7 @@ GameObject:
   - component: {fileID: 5432970550308990941}
   - component: {fileID: 7997521173363436961}
   - component: {fileID: 590450153310717973}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: DamageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,6 +1009,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerStand
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 774134bbf3128064d9e7f00743855a18,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 774134bbf3128064d9e7f00743855a18, type: 3}
 --- !u!4 &4445553580484679486 stripped
@@ -1105,6 +1113,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TowerHead
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 831b946ecae90254f85f8befcadf0235,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 831b946ecae90254f85f8befcadf0235, type: 3}

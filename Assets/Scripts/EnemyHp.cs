@@ -20,6 +20,7 @@ public class EnemyHp : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         print(collision.gameObject);
+
         if(collision.gameObject.tag == "Wall")
         {
             collision.gameObject.GetComponent<Wall>().wallHp--;

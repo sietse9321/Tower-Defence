@@ -6,10 +6,12 @@ public class WallTower : MonoBehaviour
 {
     float range = 2.5f;
     float rayAngle = 30f;
+    [SerializeField] Animator printerAnimator;
     [SerializeField] GameObject wallPrefab;
     [SerializeField] bool placedWall = false;
     void Update()
     {
+        printerAnimator.SetBool("PlayAnimation", true);
         if(placedWall == false)
         {
             print("placing");
@@ -42,9 +44,15 @@ public class WallTower : MonoBehaviour
                     //set a bool (presumably to indicate that a wall was placed)
                     placedWall = true;
                     //exit loop
+                    printerAnimator.SetBool("PlayAnimation",false);
                     break;
                 }
             }
         }
+    }
+    
+    private void Start()
+    {
+        printerAnimator = GetComponent<Animator>();
     }
 }
